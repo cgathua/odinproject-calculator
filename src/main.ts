@@ -48,6 +48,7 @@ function handleOperator(nextSymbol: string) {
 
     if (firstValue == null && !isNaN(inputValue)) {
         calculator.firstValue = inputValue;
+        
     } else if (symbol) {
         const result = calculate(firstValue, inputValue, symbol);
 
