@@ -37,12 +37,12 @@ function inputDecimal(dot: string) {
     }
 };
 
-function handleOperator(nextOperator: string) {
+function handleOperator(nextSymbol: string) {
     const { firstValue, displayValue, symbol } = calculator
     const inputValue = parseFloat(displayValue);
 
     if (symbol && calculator.isSecondValueChecked) {
-        calculator.symbol = nextOperator;
+        calculator.symbol = nextSymbol;
         return;
     }
 
@@ -56,20 +56,20 @@ function handleOperator(nextOperator: string) {
     }
 
     calculator.isSecondValueChecked = true;
-    calculator.symbol = nextOperator;
+    calculator.symbol = nextSymbol;
 };
 
-function calculate(firstValue: number, secondOperand: number, symbol: string) {
+function calculate(firstValue: number, secondValue: number, symbol: string) {
     if (symbol === '+') {
-        return firstValue + secondOperand;
+        return firstValue + secondValue;
     } else if (symbol === '-') {
-        return firstValue - secondOperand;
+        return firstValue - secondValue;
     } else if (symbol === '*') {
-        return firstValue * secondOperand;
+        return firstValue * secondValue;
     } else if (symbol === '/') {
-        return firstValue / secondOperand;
+        return firstValue / secondValue;
     }
-    return secondOperand;
+    return secondValue;
 };
 
 function resetCalculator() {
